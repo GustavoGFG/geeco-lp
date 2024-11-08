@@ -47,7 +47,10 @@ export const Differentials = () => {
         </div>
 
         <div className="text-center absolute top-0 right-0 left-0 -translate-y-[calc(50%+5px)]">
-          <Button variant="tradeoff_secondary">
+          <Button
+            variant="tradeoff_secondary"
+            href="https://web.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre o trade-off de coprodutos."
+          >
             Solicite uma avaliação gratuita
           </Button>
         </div>

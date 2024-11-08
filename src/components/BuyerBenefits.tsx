@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/Button";
-import { BookOpenCheck, Handshake, Unplug } from "lucide-react";
+import { ClipboardList, Handshake, Search } from "lucide-react";
 import React from "react";
 import { CustomCard } from "./ui/CustomCard";
 
@@ -15,28 +15,30 @@ export const BuyerBenefits = () => {
   const processSteps = [
     {
       number: 1,
-      title: "Avalie",
-      icon: <BookOpenCheck size={22} className="text-yellow-300" />,
-      subtitle: "Solicite uma avaliação gratuita",
+      title: "Defina",
+      icon: <ClipboardList size={22} className="text-yellow-300" />,
+      subtitle: "Personalize sua demanda",
       description:
-        "Entenda o valor do seu resíduo. Nossa análise inicial revela o potencial econômico e sustentável dos seus materiais, sem compromisso. Descubra como podemos transformar seu resíduo em um ativo valioso.",
+        "Informe os requisitos específicos da matéria-prima que busca, incluindo as características essenciais e preferências. Alinhamos nossos esforços às suas necessidades para garantir que você encontre a solução ideal.",
+      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, estou em busca de uma matéria prima específica e gostaria da expertise Geeco",
     },
     {
       number: 2,
       title: "Conecte",
-      icon: <Unplug size={22} className="text-yellow-300" />,
-      subtitle: "A conexão com o parceiro ideal",
+      icon: <Search size={22} className="text-yellow-300" />,
+      subtitle: "Encontre a matéria-prima ideal",
       description:
-        "Aproveite nossa rede de parceiros para destinar seus resíduos e ainda gerar receita extra. Podemos priorizar o volume de consumo ou o valor agregado do seu coproduto. Conecte-se agora e participe da economia circular.",
+        "Verificamos nossa rede de coprodutos sustentáveis e, se o material estiver disponível, iniciamos a negociação de imediato. Se for necessário, nossa equipe de prospecção encontra o coproduto ideal para você, economizando tempo e garantindo qualidade.",
+      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, estou em busca de uma matéria prima específica e gostaria da expertise Geeco",
     },
     {
       number: 3,
       title: "Negocie",
       icon: <Handshake size={22} className="text-yellow-300" />,
-      subtitle: "Transforme resíduo em receita",
+      subtitle: "Facilidade nas negociações",
       description:
-        // "Tomamos conta da negociação com o seu direcionamento para que você não tenha trabalho. Com nosso suporte completo, você negocia com segurança. Feche o ciclo e transforme o que era desperdício em uma oportunidade lucrativa.",
-        "Conduzimos a negociação conforme suas diretrizes, garantindo que você não tenha trabalho. Com nosso suporte completo, você negocia com segurança. Feche o ciclo e transforme o que era desperdício em uma oportunidade lucrativa.",
+        "Na Geeco, cuidamos da negociação para você. Com suporte dedicado, garantimos segurança e flexibilidade em todo o processo. Nossa abordagem simples e transparente permite que você foque no essencial, enquanto asseguramos a melhor experiência na compra de matéria-prima sustentável e de qualidade.",
+      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, estou em busca de uma matéria prima específica e gostaria da expertise Geeco",
     },
   ];
 
@@ -58,13 +60,16 @@ export const BuyerBenefits = () => {
                 {benefits.map((benefit, index) => (
                   <li
                     key={index}
-                    className="flex items-center space-x-4 pl-4 border-l-[3px] border-tradeoff-primary_contrast "
+                    className="flex items-center space-x-4 pl-4 border-l-[3px] border-tradeoff-bg_gradient_light "
                   >
                     <span className="text-base font-poppins">{benefit}</span>
                   </li>
                 ))}
               </ul>
-              <Button variant="tradeoff_secondary">
+              <Button
+                variant="tradeoff_secondary"
+                href="https://web.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre os benefícios para compradores no trade-off de coprodutos."
+              >
                 <p>Saiba mais</p>
               </Button>
             </div>
@@ -81,7 +86,7 @@ export const BuyerBenefits = () => {
           <h2 className="text-2xl font-spartan font-bold text-center text-tradeoff-primary mb-10 uppercase">
             Como Funciona o Processo
           </h2>
-          <div className="flex md:justify-between justify-center items-center flex-wrap gap-8">
+          <div className="flex lg:flex-row flex-col md:justify-between justify-center items-center flex-wrap gap-8 min-h-[340px]">
             {processSteps.map((step, index) => (
               <CustomCard
                 key={index}
@@ -90,6 +95,7 @@ export const BuyerBenefits = () => {
                 subtitle={step.subtitle}
                 description={step.description}
                 icon={step.icon}
+                href={step.href}
               />
             ))}
           </div>

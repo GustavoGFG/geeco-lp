@@ -14,7 +14,10 @@ export const FinalCTA = () => {
           aqui para oferecer uma avaliação gratuita que traz oportunidades
           sustentáveis e rentáveis para o seu negócio.
         </p>
-        <Button variant="tradeoff_secondary">
+        <Button
+          variant="tradeoff_secondary"
+          href="https://web.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre os trade-off de coprodutos."
+        >
           Quero minha avaliação gratuita
         </Button>
       </div>

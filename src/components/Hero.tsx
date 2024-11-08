@@ -18,7 +18,10 @@ export const Hero = () => {
               </h2>
             </div>
             <div>
-              <Button variant="tradeoff_secondary">
+              <Button
+                variant="tradeoff_secondary"
+                href="https://web.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre o trade-off de coprodutos."
+              >
                 <p className="uppercase">Fale com um especialista</p>
               </Button>
             </div>

@@ -6,6 +6,7 @@ interface CardProps {
   subtitle: string;
   description: string;
   icon: React.ReactNode;
+  href: string;
 }
 
 export const CustomCard: React.FC<CardProps> = ({
@@ -14,9 +15,10 @@ export const CustomCard: React.FC<CardProps> = ({
   subtitle,
   description,
   icon,
+  href,
 }) => {
   return (
-    <div className="max-w-[300px] flex flex-col justify-between gap-2">
+    <div className="max-w-[300px] flex flex-col h-full items-center justify-between gap-2">
       {/* Borda contornando o card */}
 
       {/* Container para o número, título e ícone */}
@@ -52,7 +54,9 @@ export const CustomCard: React.FC<CardProps> = ({
           </p>
         </div>
       </div>
-      <Button variant="tradeoff_secondary">{title}</Button>
+      <Button variant="tradeoff_secondary" href={href}>
+        {title}
+      </Button>
     </div>
   );
 };

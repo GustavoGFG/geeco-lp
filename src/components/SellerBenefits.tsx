@@ -20,6 +20,7 @@ export const SellerBenefits = () => {
       subtitle: "Solicite uma avaliação gratuita",
       description:
         "Entenda o valor do seu resíduo. Nossa análise inicial revela o potencial econômico e sustentável dos seus materiais, sem compromisso. Descubra como podemos transformar seu resíduo em um ativo valioso.",
+      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, possuo um coproduto e gostaria de realizar uma avaliação do meu produto",
     },
     {
       number: 2,
@@ -28,6 +29,7 @@ export const SellerBenefits = () => {
       subtitle: "A conexão com o parceiro ideal",
       description:
         "Aproveite nossa rede de parceiros para destinar seus resíduos e ainda gerar receita extra. Podemos priorizar o volume de consumo ou o valor agregado do seu coproduto. Conecte-se agora e participe da economia circular.",
+      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, possuo um coproduto e gostaria de realizar uma avaliação do meu produto",
     },
     {
       number: 3,
@@ -37,6 +39,7 @@ export const SellerBenefits = () => {
       description:
         // "Tomamos conta da negociação com o seu direcionamento para que você não tenha trabalho. Com nosso suporte completo, você negocia com segurança. Feche o ciclo e transforme o que era desperdício em uma oportunidade lucrativa.",
         "Conduzimos a negociação conforme suas diretrizes, garantindo que você não tenha trabalho. Com nosso suporte completo, você negocia com segurança. Feche o ciclo e transforme o que era desperdício em uma oportunidade lucrativa.",
+      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, possuo um coproduto e gostaria de realizar uma avaliação do meu produto",
     },
   ];
 
@@ -55,13 +58,16 @@ export const SellerBenefits = () => {
                 {benefits.map((benefit, index) => (
                   <li
                     key={index}
-                    className="flex items-center space-x-4 pl-4 border-l-[3px] border-tradeoff-primary_contrast "
+                    className="flex items-center space-x-4 pl-4 border-l-[3px] border-tradeoff-bg_gradient_light "
                   >
                     <span className="text-base font-poppins">{benefit}</span>
                   </li>
                 ))}
               </ul>
-              <Button variant="tradeoff_secondary">
+              <Button
+                variant="tradeoff_secondary"
+                href="https://web.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre os benefícios para vendedores no trade-off de coprodutos."
+              >
                 <p>Saiba mais</p>
               </Button>
             </div>
@@ -74,11 +80,11 @@ export const SellerBenefits = () => {
           </div>
         </div>
 
-        <div>
+        <div className="min-h-min">
           <h2 className="text-2xl font-spartan font-bold text-center text-tradeoff-primary mb-10 uppercase">
             Como Funciona o Processo
           </h2>
-          <div className="flex md:justify-between flex-wrap gap-8 items-center justify-center">
+          <div className="flex md:justify-between lg:flex-row flex-col flex-wrap gap-8 items-center justify-center min-h-[340px]">
             {processSteps.map((step, index) => (
               <CustomCard
                 key={index}
@@ -87,6 +93,7 @@ export const SellerBenefits = () => {
                 subtitle={step.subtitle}
                 description={step.description}
                 icon={step.icon}
+                href={step.href}
               />
             ))}
           </div>

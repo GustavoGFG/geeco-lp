@@ -30,7 +30,7 @@ const cardsData: Card[] = [
 
 export const OurBusiness = () => {
   return (
-    <section className="lg:mt-[-400px] mt-[-0px] flex flex-col items-center justify-center bg-gradient-to-br from-tradeoff-bg_gradient_dark to-tradeoff-bg_gradient_light px-10 py-12">
+    <section className="lg:mt-[-400px] mt-[-0px] flex flex-col items-center justify-center lg:bg-transparent bg-gradient-to-br from-tradeoff-bg_gradient_dark to-tradeoff-bg_gradient_light px-10 py-12">
       <div className="w-full max-w-[1200px] flex lg:flex-row flex-col items-center justify-center gap-8">
         {cardsData.map((card, index) => (
           <div

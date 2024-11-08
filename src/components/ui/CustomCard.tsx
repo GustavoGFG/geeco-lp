@@ -52,9 +52,7 @@ export const CustomCard: React.FC<CardProps> = ({
           </p>
         </div>
       </div>
-      <Button variant="tradeoff_secondary">
-        <p>{title}</p>
-      </Button>
+      <Button variant="tradeoff_secondary">{title}</Button>
     </div>
   );
 };

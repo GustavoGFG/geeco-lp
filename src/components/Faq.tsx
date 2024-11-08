@@ -83,7 +83,6 @@ export const FAQSection = () => {
         </h2>
         <div className="flex gap-20 items-center">
           <Accordion className="flex-1" type="single" collapsible>
-            {/* FAQ Items */}
             {faqs.map((faq, index) => (
               <AccordionItem
                 value={String(index)}

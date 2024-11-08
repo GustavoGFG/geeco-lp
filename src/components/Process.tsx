@@ -110,18 +110,18 @@ export const CustomCard: React.FC<CardProps> = ({
       {/* Container para o número, título e ícone */}
       <div>
         <div className="w-full flex items-center relative p-1 m-0 bg-white border-t-[2px] border-r-[2px] border-b-[2px] rounded-r-full border-tradeoff-primary">
-          <span className="w-2 h-2 rounded-full border-[2px] border-tradeoff-primary absolute top-[-5px] left-0 z-10 bg-white"></span>
-          <span className="relative z-20 text-5xl -mb-2 -mr-2 text-tradeoff-primary text-shadow leading-none font-nohemi font-bold">
+          <div className="w-2 h-2 rounded-full border-[2px] border-tradeoff-primary absolute top-[-5px] left-0 z-10 bg-white"></div>
+          <div className="relative z-20 text-5xl -mb-2 -mr-2 text-tradeoff-primary text-shadow leading-none font-nohemi font-bold">
             {number}
-          </span>
+          </div>
           <h3 className="text-center relative w-full z-0 leading-none text-xl mr-1 py-[6px] pl-6 pr-12 font-lexend bg-tradeoff-primary text-white">
             {title}
           </h3>
-          <span className="absolute -right-0 bg-white rounded-full p-1 z-0">
+          <div className="absolute -right-0 bg-white rounded-full p-1 z-0">
             <span className="flex items-center justify-center bg-tradeoff-primary p-2 w-full h-full rounded-full">
               {icon}
             </span>
-          </span>
+          </div>
         </div>
 
         {/* Subtítulo e descrição */}
@@ -134,9 +134,7 @@ export const CustomCard: React.FC<CardProps> = ({
           </p>
         </div>
       </div>
-      <Button variant="tradeoff_secondary">
-        <p>{title}</p>
-      </Button>
+      <Button variant="tradeoff_secondary">{title}</Button>
     </div>
   );
 };

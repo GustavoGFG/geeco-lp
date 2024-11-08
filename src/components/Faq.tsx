@@ -155,18 +155,17 @@ export const FAQSection = () => {
       </div>
       <ContactSection
         socialLinks={{
-          linkedin: "https://www.linkedin.com/in/seu-linkedin",
-          instagram: "https://www.instagram.com/seu-instagram",
+          linkedin: "https://www.linkedin.com/company/geecomateriais/",
+          instagram: "https://www.instagram.com/geecomateriais/",
           whatsapp:
-            "https://api.whatsapp.com/send?phone=5531990647330&text=Olá, gostaria de saber mais sobre os tijolos ecológicos.",
-          email: "seu-email@dominio.com",
-          website: "https://www.vrdtijolosecologicos.com.br/",
+            "https://api.whatsapp.com/send?phone=553192834490&text=Olá, possuo um coproduto e gostaria de realizar uma avaliação do meu produto",
+          email: "comercial@geeco.com.br",
+          website: "https://geeco.com.br/",
         }}
-        addressLink="https://www.google.com/maps/search/Rua+Jos%C3%A9+Geraldo+Baeta+Neves,+n%C2%BA+121,+Galp%C3%A3o+15,+Bairro+Teot%C3%B4nio+Batista+de+Freitas,+Pedro+Leopoldo%2FMG/@-19.5920373,-44.0457547,17z?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"
-        address="Rua Suzana Passos, nº 830, Santo Antônio da Barra
-Pedro Leopoldo/MG"
-        companyName="VRD Tijolos Ecológicos"
-        hoverColor="hover:text-tradeoff-primary_contrast" // exemplo de cor de hover
+        addressLink="https://www.google.com/maps/search/Rua+Suzana+Passos,+n%C2%BA+830,+Santo+Ant%C3%B4nio+da+Barra+Pedro+Leopoldo%2FMG+-+CEP+33.257-010+Minas+Gerais+-+Brasil/@-19.6416584,-44.0558335,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
+        address="Rua Suzana Passos, nº 830, Santo Antônio da Barra Pedro Leopoldo/MG"
+        companyName="Geeco Materiais & Engenharia"
+        hoverColor="hover:text-tradeoff-primary_contrast"
         textColor="text-gray-400"
       />
     </section>

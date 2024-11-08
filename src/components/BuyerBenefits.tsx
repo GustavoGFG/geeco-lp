@@ -45,7 +45,7 @@ export const BuyerBenefits = () => {
       id="buyer"
       className="w-full text-tradeoff-primary bg-gray-100 py-20"
     >
-      <div className="max-w-[1200px] mx-auto px-0 w-full flex flex-col gap-12">
+      <div className="max-w-[1200px] mx-auto md:px-10 px-4 w-full flex flex-col gap-12">
         {/* About Us and Video Section */}
         <div className="flex flex-col md:flex-row-reverse gap-8">
           {/* About Us Text */}
@@ -81,7 +81,7 @@ export const BuyerBenefits = () => {
           <h2 className="text-2xl font-spartan font-bold text-center text-tradeoff-primary mb-10 uppercase">
             Como Funciona o Processo
           </h2>
-          <div className="flex justify-between flex-wrap gap-8">
+          <div className="flex md:justify-between justify-center items-center flex-wrap gap-8">
             {processSteps.map((step, index) => (
               <CustomCard
                 key={index}

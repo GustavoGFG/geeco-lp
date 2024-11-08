@@ -76,12 +76,12 @@ export const FAQSection = () => {
   };
 
   return (
-    <section className="w-full bg-gradient-to-r from-tradeoff-bg_gradient_dark to-tradeoff-bg_gradient_light text-white pt-12 pb-4 px-4">
-      <div className="max-w-[1200px] mx-auto pb-8">
+    <section className="w-full bg-gradient-to-r from-tradeoff-bg_gradient_dark to-tradeoff-bg_gradient_light text-white pt-12 pb-4">
+      <div className="max-w-[1200px] mx-auto pb-8 md:px-10 px-4">
         <h2 className="text-2xl font-spartan font-bold uppercase text-center mb-8">
           Perguntas Frequentes
         </h2>
-        <div className="flex gap-20 items-center">
+        <div className="flex lg:flex-row flex-col gap-20 items-center ">
           <Accordion className="flex-1" type="single" collapsible>
             {faqs.map((faq, index) => (
               <AccordionItem

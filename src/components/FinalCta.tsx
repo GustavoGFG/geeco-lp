@@ -3,8 +3,8 @@ import React from "react";
 
 export const FinalCTA = () => {
   return (
-    <section className="w-full bg-gray-100 text-white py-12 text-center px-4 bg-gradient-to-r from-tradeoff-bg_gradient_dark to-tradeoff-bg_gradient_light">
-      <div className="max-w-3xl mx-auto space-y-6">
+    <section className="w-full bg-gray-100 text-white py-12 text-center bg-gradient-to-r from-tradeoff-bg_gradient_dark to-tradeoff-bg_gradient_light">
+      <div className="max-w-3xl mx-auto space-y-6 md:px-10 px-4">
         <h2 className="text-2xl font-spartan font-bold uppercase">
           Pronto para transformar resíduos em valor?
         </h2>

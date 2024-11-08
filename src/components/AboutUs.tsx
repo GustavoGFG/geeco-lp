@@ -4,7 +4,7 @@ import React from "react";
 export const AboutSection = () => {
   return (
     <section id="aboutus" className="w-full bg-gray-100 py-20">
-      <div className="max-w-[1200px] mx-auto px-10">
+      <div className="max-w-[1200px] mx-auto md:px-10 px-4">
         {/* About Us and Video Section */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* About Us Text */}

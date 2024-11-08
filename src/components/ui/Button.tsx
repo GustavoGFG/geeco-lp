@@ -109,7 +109,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={handleClick}
-      className={`text-nowrap md:px-10 px-0 py-2 rounded-sm self-center font-bold focus:outline-none transition-colors duration-200 text-center mt-3 ${variantClasses[variant]} disabled:opacity-50`}
+      className={`text-nowrap md:px-10 px-4 py-2 rounded-sm self-center font-bold focus:outline-none transition-colors duration-200 text-center mt-3 ${variantClasses[variant]} disabled:opacity-50`}
       {...rest}
     >
       {children}

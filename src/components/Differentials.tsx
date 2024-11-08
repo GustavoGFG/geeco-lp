@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 export const Differentials = () => {
   return (
     <section className="w-full bg-gradient-to-r from-tradeoff-bg_gradient_dark to-tradeoff-bg_gradient_light text-white py-12 shadow-lg relative">
-      <div className="max-w-[1200px] mx-auto px-10">
+      <div className="max-w-[1200px] mx-auto md:px-10 px-4">
         <h2 className="text-2xl uppercase font-spartan font-bold text-center mb-10">
           Por que Escolher a Geeco?
         </h2>

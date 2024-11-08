@@ -30,8 +30,8 @@ const cardsData: Card[] = [
 
 export const OurBusiness = () => {
   return (
-    <section className="mt-[-400px] flex flex-col items-center bg-gradient-to-br from-tradeoff-bg_gradient_light to-tradeoff-bg_gradient_dark px-10 py-12">
-      <div className="w-full max-w-[1200px] flex flex-wrap justify-between gap-8">
+    <section className="md:mt-[-400px] mt-[-0px] flex flex-col items-center justify-center bg-gradient-to-br from-tradeoff-bg_gradient_light to-tradeoff-bg_gradient_dark px-10 py-12">
+      <div className="w-full max-w-[1200px] flex flex-wrap items-center justify-center gap-8">
         {cardsData.map((card, index) => (
           <div
             key={index}

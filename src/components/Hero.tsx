@@ -10,7 +10,7 @@ export const Hero = () => {
             <h1 className="md:text-6xl text-5xl text-white uppercase font-spartan font-bold">
               Facilitando a economia circular.
             </h1>
-            <div className="opacity-100 backdrop-blur-[500px]">
+            <div className="">
               <h2 className="md:text-lg text-base text-white font-poppins">
                 Conectamos quem quer vender coprodutos, resíduos ou rejeitos
                 industriais e potencializar sua receita com quem quer comprar

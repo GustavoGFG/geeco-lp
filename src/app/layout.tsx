@@ -16,17 +16,19 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Transforme Resíduos em Valor: A Conexão de Negócios da Geeco",
+  title:
+    "Trade-off de coprodutos | Conectando vendedores e compradores de matérias-primas sustentáveis.",
   description:
-    "A Geeco conecta empresas que desejam vender coprodutos a compradores de matérias-primas, promovendo um ciclo econômico sustentável e eficiente. Nossa empresa facilita transações que valorizam os recursos, geram lucro e incentivam a sustentabilidade. Descubra como podemos ajudar sua empresa a encontrar parcerias ideais para transformar resíduos em oportunidades lucrativas.",
+    "A Geeco conecta empresas que desejam vender coprodutos a compradores de matérias-primas. Nós facilitamos transações nos aspectos de negociação, logística e burocracias. Descubra como podemos ajudar sua empresa a encontrar parcerias ideais para transformar resíduos industriais em oportunidades lucrativas.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const title = "Transforme Resíduos em Valor: A Conexão de Negócios da Geeco";
+  const title =
+    "Trade-off de coprodutos | Conectando vendedores e compradores de matérias-primas sustentáveis.";
   const description =
-    "A Geeco conecta empresas que desejam vender coprodutos a compradores de matérias-primas, promovendo um ciclo econômico sustentável e eficiente. Nossa empresa facilita transações que valorizam os recursos, geram lucro e incentivam a sustentabilidade. Descubra como podemos ajudar sua empresa a encontrar parcerias ideais para transformar resíduos em oportunidades lucrativas.";
+    "A Geeco conecta empresas que desejam vender coprodutos a compradores de matérias-primas. Nós facilitamos transações nos aspectos de negociação, logística e burocracias. Descubra como podemos ajudar sua empresa a encontrar parcerias ideais para transformar resíduos industriais em oportunidades lucrativas.";
 
   const imageUrl = "https://www.tradeoff.geeco.com.br/images/link-card.png";
 

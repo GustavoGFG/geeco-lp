@@ -20,7 +20,7 @@ export const SellerBenefits = () => {
       subtitle: "Solicite uma avaliação gratuita",
       description:
         "Entenda o valor do seu resíduo. Nossa análise inicial revela o potencial econômico e sustentável dos seus materiais, sem compromisso. Descubra como podemos transformar seu resíduo em um ativo valioso.",
-      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, possuo um coproduto e gostaria de realizar uma avaliação do meu produto",
+      href: "https://api.whatsapp.com/send?phone=553192834490&text=Olá, possuo um coproduto e gostaria de realizar uma avaliação do meu produto",
     },
     {
       number: 2,
@@ -29,7 +29,7 @@ export const SellerBenefits = () => {
       subtitle: "A conexão com o parceiro ideal",
       description:
         "Aproveite nossa rede de parceiros para destinar seus resíduos e ainda gerar receita extra. Podemos priorizar o volume de consumo ou o valor agregado do seu coproduto. Conecte-se agora e participe da economia circular.",
-      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, possuo um coproduto e gostaria de realizar uma avaliação do meu produto",
+      href: "https://api.whatsapp.com/send?phone=553192834490&text=Olá, possuo um coproduto e gostaria de realizar uma avaliação do meu produto",
     },
     {
       number: 3,
@@ -39,7 +39,7 @@ export const SellerBenefits = () => {
       description:
         // "Tomamos conta da negociação com o seu direcionamento para que você não tenha trabalho. Com nosso suporte completo, você negocia com segurança. Feche o ciclo e transforme o que era desperdício em uma oportunidade lucrativa.",
         "Conduzimos a negociação conforme suas diretrizes, garantindo que você não tenha trabalho. Com nosso suporte completo, você negocia com segurança. Feche o ciclo e transforme o que era desperdício em uma oportunidade lucrativa.",
-      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, possuo um coproduto e gostaria de realizar uma avaliação do meu produto",
+      href: "https://api.whatsapp.com/send?phone=553192834490&text=Olá, possuo um coproduto e gostaria de realizar uma avaliação do meu produto",
     },
   ];
 
@@ -66,7 +66,7 @@ export const SellerBenefits = () => {
               </ul>
               <Button
                 variant="tradeoff_secondary"
-                href="https://web.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre os benefícios para vendedores no trade-off de coprodutos."
+                href="https://api.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre os benefícios para vendedores no trade-off de coprodutos."
               >
                 <p>Saiba mais</p>
               </Button>

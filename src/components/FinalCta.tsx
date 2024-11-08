@@ -16,7 +16,7 @@ export const FinalCTA = () => {
         </p>
         <Button
           variant="tradeoff_secondary"
-          href="https://web.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre os trade-off de coprodutos."
+          href="https://api.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre os trade-off de coprodutos."
         >
           Quero minha avaliação gratuita
         </Button>

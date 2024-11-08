@@ -20,7 +20,7 @@ export const BuyerBenefits = () => {
       subtitle: "Personalize sua demanda",
       description:
         "Informe os requisitos específicos da matéria-prima que busca, incluindo as características essenciais e preferências. Alinhamos nossos esforços às suas necessidades para garantir que você encontre a solução ideal.",
-      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, estou em busca de uma matéria prima específica e gostaria da expertise Geeco",
+      href: "https://api.whatsapp.com/send?phone=553192834490&text=Olá, estou em busca de uma matéria prima específica e gostaria da expertise Geeco",
     },
     {
       number: 2,
@@ -29,7 +29,7 @@ export const BuyerBenefits = () => {
       subtitle: "Encontre a matéria-prima ideal",
       description:
         "Verificamos nossa rede de coprodutos sustentáveis e, se o material estiver disponível, iniciamos a negociação de imediato. Se for necessário, nossa equipe de prospecção encontra o coproduto ideal para você, economizando tempo e garantindo qualidade.",
-      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, estou em busca de uma matéria prima específica e gostaria da expertise Geeco",
+      href: "https://api.whatsapp.com/send?phone=553192834490&text=Olá, estou em busca de uma matéria prima específica e gostaria da expertise Geeco",
     },
     {
       number: 3,
@@ -38,7 +38,7 @@ export const BuyerBenefits = () => {
       subtitle: "Facilidade nas negociações",
       description:
         "Na Geeco, cuidamos da negociação para você. Com suporte dedicado, garantimos segurança e flexibilidade em todo o processo. Nossa abordagem simples e transparente permite que você foque no essencial, enquanto asseguramos a melhor experiência na compra de matéria-prima sustentável e de qualidade.",
-      href: "https://web.whatsapp.com/send?phone=553192834490&text=Olá, estou em busca de uma matéria prima específica e gostaria da expertise Geeco",
+      href: "https://api.whatsapp.com/send?phone=553192834490&text=Olá, estou em busca de uma matéria prima específica e gostaria da expertise Geeco",
     },
   ];
 
@@ -68,7 +68,7 @@ export const BuyerBenefits = () => {
               </ul>
               <Button
                 variant="tradeoff_secondary"
-                href="https://web.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre os benefícios para compradores no trade-off de coprodutos."
+                href="https://api.whatsapp.com/send?phone=553192834490&text=Olá, gostaria de saber mais sobre os benefícios para compradores no trade-off de coprodutos."
               >
                 <p>Saiba mais</p>
               </Button>

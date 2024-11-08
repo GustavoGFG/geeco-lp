@@ -158,7 +158,7 @@ export const FAQSection = () => {
           linkedin: "https://www.linkedin.com/in/seu-linkedin",
           instagram: "https://www.instagram.com/seu-instagram",
           whatsapp:
-            "https://web.whatsapp.com/send?phone=5531990647330&text=Olá, gostaria de saber mais sobre os tijolos ecológicos.",
+            "https://api.whatsapp.com/send?phone=5531990647330&text=Olá, gostaria de saber mais sobre os tijolos ecológicos.",
           email: "seu-email@dominio.com",
           website: "https://www.vrdtijolosecologicos.com.br/",
         }}

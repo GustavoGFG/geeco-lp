@@ -28,7 +28,7 @@ export default function RootLayout({
   const description =
     "A Geeco conecta empresas que desejam vender coprodutos a compradores de matérias-primas, promovendo um ciclo econômico sustentável e eficiente. Nossa empresa facilita transações que valorizam os recursos, geram lucro e incentivam a sustentabilidade. Descubra como podemos ajudar sua empresa a encontrar parcerias ideais para transformar resíduos em oportunidades lucrativas.";
 
-  const imageUrl = "https://www.tradeoff.geeco.com.br/link-card.png";
+  const imageUrl = "https://www.tradeoff.geeco.com.br/images/link-card.png";
 
   return (
     <html lang="en">

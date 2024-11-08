@@ -16,20 +16,19 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title:
-    "VRD Tijolos Ecológicos - Inovação Sustentável, Economia e Eficiência na Construção",
+  title: "Transforme Resíduos em Valor: A Conexão de Negócios da Geeco",
   description:
-    "Construa com inteligência e responsabilidade. VRD Tijolos Ecológicos oferece soluções que reduzem custos, aceleram prazos e diminuem o uso de cimento e madeira.",
+    "A Geeco conecta empresas que desejam vender coprodutos a compradores de matérias-primas, promovendo um ciclo econômico sustentável e eficiente. Nossa empresa facilita transações que valorizam os recursos, geram lucro e incentivam a sustentabilidade. Descubra como podemos ajudar sua empresa a encontrar parcerias ideais para transformar resíduos em oportunidades lucrativas.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const title = "VRD Tijolos Ecológicos - Inovação Sustentável";
+  const title = "Transforme Resíduos em Valor: A Conexão de Negócios da Geeco";
   const description =
-    "Construa com inteligência e responsabilidade. VRD Tijolos Ecológicos oferece soluções que reduzem custos, aceleram prazos e diminuem o uso de cimento e madeira.";
+    "A Geeco conecta empresas que desejam vender coprodutos a compradores de matérias-primas, promovendo um ciclo econômico sustentável e eficiente. Nossa empresa facilita transações que valorizam os recursos, geram lucro e incentivam a sustentabilidade. Descubra como podemos ajudar sua empresa a encontrar parcerias ideais para transformar resíduos em oportunidades lucrativas.";
 
-  const imageUrl = "https://vrd-blocos.vercel.app/static/card-image.png";
+  const imageUrl = "https://www.tradeoff.geeco.com.br/link-card.png";
 
   return (
     <html lang="en">
@@ -55,10 +54,13 @@ export default function RootLayout({
         />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:url" content="https://vrd-blocos.vercel.app/v1" />
+        <meta property="og:url" content="https://www.tradeoff.geeco.com.br" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={imageUrl} />
-        <meta property="og:image:alt" content="Imagem dos Tijolos Ecológicos" />
+        <meta
+          property="og:image:alt"
+          content="Imagem representando a economia circular com destaque para a conexão entre empresas que vendem coprodutos e compram matérias-primas de forma sustentável"
+        />
       </head>
       <body
         className={`bg-transparent ${geistSans.variable} ${geistMono.variable} antialiased`}

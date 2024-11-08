@@ -30,12 +30,12 @@ const cardsData: Card[] = [
 
 export const OurBusiness = () => {
   return (
-    <section className="md:mt-[-400px] mt-[-0px] flex flex-col items-center justify-center bg-gradient-to-br from-tradeoff-bg_gradient_light to-tradeoff-bg_gradient_dark px-10 py-12">
-      <div className="w-full max-w-[1200px] flex flex-wrap items-center justify-center gap-8">
+    <section className="lg:mt-[-400px] mt-[-0px] flex flex-col items-center justify-center bg-gradient-to-br from-tradeoff-bg_gradient_dark to-tradeoff-bg_gradient_light px-10 py-12">
+      <div className="w-full max-w-[1200px] flex lg:flex-row flex-col items-center justify-center gap-8">
         {cardsData.map((card, index) => (
           <div
             key={index}
-            className="relative w-[300px] max-w-full bg-transparent p-6 flex flex-col items-center justify-center text-center aspect-square gap-1 group transition-all duration-1000 ease-in-out"
+            className="relative max-w-[300px] flex-1 bg-transparent p-6 flex flex-col items-center justify-center text-center aspect-square gap-1 group transition-all duration-1000 ease-in-out"
           >
             {/* Linhas decorativas */}
             <div className="absolute top-0 left-0 h-[33%] w-0.5 bg-tradeoff-primary_contrast group-hover:top-[15%] transition-all duration-500 ease-in-out" />

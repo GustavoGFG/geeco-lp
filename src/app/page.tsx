@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import { AboutSection } from "../components/AboutUs";
 import { BuyerBenefits } from "../components/BuyerBenefits";
 import { Differentials } from "../components/Differentials";
@@ -19,6 +20,7 @@ export default function TradeOffPage() {
       <FinalCTA />
       <BuyerBenefits />
       <FAQSection />
+      <Toaster />
     </>
   );
 }

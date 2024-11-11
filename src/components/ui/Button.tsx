@@ -17,12 +17,15 @@ type ButtonVariant =
   | "tradeoff_secondary"
   | "tradeoff_outline";
 
+type ButtonType = "button" | "submit" | "reset";
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   href?: string; // URL ou ID para rolar a página
   onClick?: () => void; // Função de clique personalizada
   enableAnalytics?: boolean; // Permitir envio de evento para o Google Analytics
   analyticsEvent?: string; // Nome do evento a ser enviado ao Google Analytics
+  btnType?: ButtonType;
 }
 
 // Definir estilos para cada variante
@@ -72,6 +75,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   enableAnalytics = false,
   analyticsEvent = "button_click",
+  btnType,
   ...rest
 }) => {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -108,6 +112,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      type={btnType}
       onClick={handleClick}
       className={`text-nowrap md:px-10 px-4 py-2 rounded-sm self-center font-bold focus:outline-none transition-colors duration-200 text-center mt-3 ${variantClasses[variant]} disabled:opacity-50`}
       {...rest}

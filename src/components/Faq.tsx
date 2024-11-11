@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/Button";
 import React, { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export const FAQSection = () => {
   const faqs = [
@@ -56,10 +57,21 @@ export const FAQSection = () => {
     },
   ];
 
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const [responseMessage, setResponseMessage] = useState<string | null>(null);
+
+  const { toast } = useToast();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    question: "",
+    phone: "",
+    message: "",
   });
 
   const handleInputChange = (
@@ -69,10 +81,39 @@ export const FAQSection = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Pergunta enviada:", formData);
-    setFormData({ name: "", email: "", question: "" });
+    setLoading(true);
+    setResponseMessage(null); // Limpa qualquer mensagem de resposta anterior
+
+    try {
+      const response = await fetch("/api/save-lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || "Erro ao enviar dados");
+      }
+
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      toast({
+        variant: "default",
+        title: "Dúvida recebida!",
+        description: "Em breve entraremos em contato!",
+      });
+    } catch (error: any) {
+      console.error("Erro ao enviar o formulário:", error);
+      setResponseMessage(error.message || "Erro ao enviar o formulário");
+    } finally {
+      setLoading(false);
+      return;
+    }
   };
 
   return (
@@ -104,7 +145,12 @@ export const FAQSection = () => {
             <h3 className="text-xl font-poppins mb-4 text-center">
               Não encontrou sua resposta? Pergunte-nos!
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-4 py-4">
+            <form
+              onSubmit={handleSubmit}
+              // method="POST"
+              action=""
+              className="space-y-4 py-4"
+            >
               <div>
                 <label className="block text-tradeoff-primary font-poppins">
                   Nome
@@ -113,6 +159,19 @@ export const FAQSection = () => {
                   type="text"
                   name="name"
                   value={formData.name}
+                  onChange={handleInputChange}
+                  className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 font-poppins"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-tradeoff-primary font-poppins">
+                  Telefone
+                </label>
+                <input
+                  type="text"
+                  name="phone"
+                  value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 font-poppins"
                   required
@@ -136,8 +195,8 @@ export const FAQSection = () => {
                   Sua Pergunta
                 </label>
                 <textarea
-                  name="question"
-                  value={formData.question}
+                  name="message"
+                  value={formData.message}
                   onChange={handleInputChange}
                   className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 font-poppins"
                   rows={4}
@@ -145,10 +204,22 @@ export const FAQSection = () => {
                 ></textarea>
               </div>
               <div className="flex justify-center">
-                <Button type="submit" variant="tradeoff_secondary">
+                <Button
+                  disabled={loading}
+                  variant="tradeoff_secondary"
+                  // type="submit"
+                  // className="bg-yellow-300 text-tradeoff-primary hover:bg-yellow-400 transition-colors duration-300 rounded-lg shadow-lg font-poppins text-nowrap md:px-10 px-4 py-2 self-center font-bold focus:outline-nonetext-center mt-3 disabled:opacity-50"
+                >
                   Enviar Pergunta
                 </Button>
               </div>
+              <input type="hidden" name="utm_campaign" />
+              <input type="hidden" name="utm_medium" />
+              <input type="hidden" name="utm_content" />
+              <input type="hidden" name="utm_source" />
+              <input type="hidden" name="utm_term" />
+              <input type="hidden" name="gclid" />
+              <input type="hidden" name="fbclid" />
             </form>
           </div>
         </div>

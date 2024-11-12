@@ -7,6 +7,7 @@ type LeadData = {
   phone: string;
   email: string;
   message?: string;
+  company: string;
 };
 
 export async function POST(request: Request) {
@@ -42,8 +43,9 @@ export async function POST(request: Request) {
 }
 
 async function createLead(leadData: LeadData) {
+  console.log(leadData)
   try {
-    const response = await fetch(process.env.API as string, {
+    const response = await fetch(process.env.LEAD_DB_API as string, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

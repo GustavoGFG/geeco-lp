@@ -7,7 +7,7 @@ export const Hero = () => {
       <div className="absolute inset-0 left-0 right-0 top-0 bottom-0 opacity-100 md:backdrop-blur-[1px] backdrop-blur-[7px]">
         <div className="max-w-[1200px] flex items-center justify-center mx-auto px-4 py-12 h-full">
           <div className="flex-1 flex flex-col lg:mb-[500px] gap-6 max-w-[500px] m-auto">
-            <h1 className="md:text-6xl text-5xl text-white uppercase font-spartan font-bold">
+            <h1 className="md:text-6xl text-[44px] text-white uppercase font-spartan font-bold">
               Facilitando a economia circular
             </h1>
             <div className="">

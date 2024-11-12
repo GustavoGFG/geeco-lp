@@ -9,84 +9,71 @@ import {
 import { Button } from "@/components/ui/Button";
 import React, { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { contactFormSchema } from "@/schemas/validationSchemas";
+import { z } from "zod";
+import { faqs } from "@/data/faq";
+import { FormField } from "./ui/FormField";
+
+interface ValidationErrors {
+  [key: string]: string;
+}
 
 export const FAQSection = () => {
-  const faqs = [
-    {
-      question:
-        "A compra de coprodutos sempre resulta em redução de custos para minha empresa?",
-      answer:
-        "A redução de custos ao adquirir coprodutos dependerá das características específicas da matéria-prima e das necessidades do seu negócio. Em alguns casos, a compra de coprodutos gera uma economia significativa, mas outros fatores como qualidade, processo de produção e sustentabilidade também devem ser considerados. Nossa equipe ajuda a identificar as melhores opções para equilibrar custos e benefícios, oferecendo soluções viáveis e sustentáveis para sua empresa.",
-    },
-    {
-      question:
-        "É seguro compartilhar as informações sobre meu resíduo com a Geeco?",
-      answer:
-        "Com certeza! Garantimos total segurança para seus dados. Se necessário, podemos assinar um NDA para proteger suas informações.",
-    },
-    {
-      question: "Quanto tempo leva o processo?",
-      answer:
-        "O tempo varia conforme as características do coproduto ou resíduo. Peça uma avaliação gratuita para saber o tempo estimado para o seu caso!",
-    },
-    {
-      question:
-        "E se meu resíduo não puder ser vendido devido a contaminação ou outro problema?",
-      answer:
-        "Não se preocupe! Se o resíduo não for comercializável, buscaremos uma destinação mais sustentável ou, se necessário, podemos até desenvolver uma solução sob medida para o seu caso.",
-    },
-    {
-      question: "Como funciona o processo de venda de resíduos?",
-      answer:
-        "Nós fazemos a representação comercial para a venda do seu coproduto, transformando seus resíduos em matéria-prima. Todo o processo é gerido por nós, garantindo segurança e eficácia.",
-    },
-    {
-      question: "Como funciona o processo de compra de resíduos?",
-      answer:
-        "Primeiro, entendemos suas necessidades e definimos os requisitos da matéria-prima ideal. Em seguida, apresentamos à você aos coprodutos sustentáveis que atendem às suas exigências. Cuidamos de toda a negociação, garantindo segurança, flexibilidade e a melhor experiência.",
-    },
-    {
-      question: "Quais tipos de resíduos posso vender/comprar?",
-      answer:
-        "Aceitamos uma ampla gama de coprodutos e resíduos industriais. Nossa equipe pode orientar quanto à melhor maneira de destinar seus resíduos.",
-    },
-    {
-      question: "É seguro para o meio ambiente?",
-      answer:
-        "Nosso compromisso é com práticas que apoiam a economia circular e minimizam o impacto ambiental. Todos os processos são acompanhados para garantir segurança e sustentabilidade.",
-    },
-  ];
-
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const [responseMessage, setResponseMessage] = useState<string | null>(null);
-
-  const { toast } = useToast();
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
+    company: "Trade-Off - Geeco",
   });
+  const [validationErrors, setValidationErrors] = useState<ValidationErrors>(
+    {}
+  );
+  const { toast } = useToast();
+
+  const validateField = (name: string, value: string) => {
+    const result = contactFormSchema.safeParse({ ...formData, [name]: value });
+    if (!result.success) {
+      const error = result.error.errors.find((err) => err.path[0] === name);
+      setValidationErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: error ? error.message : "",
+      }));
+    } else {
+      setValidationErrors((prevErrors) => {
+        const { [name]: removedError, ...rest } = prevErrors;
+        return rest;
+      });
+    }
+  };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    validateField(name, value);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
-    setResponseMessage(null); // Limpa qualquer mensagem de resposta anterior
 
+    const result = contactFormSchema.safeParse(formData);
+
+    if (!result.success) {
+      const errors: { [key: string]: string } = {};
+      result.error.errors.forEach((err) => {
+        errors[err.path[0]] = err.message; // Mapeia cada erro para o campo
+      });
+      setValidationErrors(errors); // Armazena os erros no estado
+      return;
+    }
+
+    setLoading(true);
     try {
+      contactFormSchema.parse(formData);
+
       const response = await fetch("/api/save-lead", {
         method: "POST",
         headers: {
@@ -95,21 +82,26 @@ export const FAQSection = () => {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message || "Erro ao enviar dados");
+      if (response.ok) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          company: "Trade-Off - Geeco",
+        });
+        toast({
+          variant: "default",
+          title: "Dúvida recebida!",
+          description: "Em breve entraremos em contato!",
+        });
       }
-
-      setFormData({ name: "", email: "", phone: "", message: "" });
-      toast({
-        variant: "default",
-        title: "Dúvida recebida!",
-        description: "Em breve entraremos em contato!",
-      });
     } catch (error: any) {
-      console.error("Erro ao enviar o formulário:", error);
-      setResponseMessage(error.message || "Erro ao enviar o formulário");
+      toast({
+        variant: "destructive",
+        title: "Oops! Algo deu errado.",
+        description: "Tente novamente ou use os contatos ao fim da página.",
+      });
     } finally {
       setLoading(false);
       return;
@@ -145,71 +137,52 @@ export const FAQSection = () => {
             <h3 className="text-xl font-poppins mb-4 text-center">
               Não encontrou sua resposta? Pergunte-nos!
             </h3>
-            <form
-              onSubmit={handleSubmit}
-              // method="POST"
-              action=""
-              className="space-y-4 py-4"
-            >
+            <form onSubmit={handleSubmit} action="" className="space-y-4 py-4">
+              <FormField
+                placeholder="Nome"
+                name="name"
+                value={formData.name}
+                error={validationErrors.name}
+                onChange={handleInputChange}
+                disabled={loading}
+              />
+              <FormField
+                placeholder="Telefone"
+                name="phone"
+                value={formData.phone}
+                error={validationErrors.phone}
+                onChange={handleInputChange}
+                disabled={loading}
+              />
+              <FormField
+                placeholder="Email"
+                name="email"
+                value={formData.email}
+                error={validationErrors.email}
+                onChange={handleInputChange}
+                disabled={loading}
+              />
               <div>
-                <label className="block text-tradeoff-primary font-poppins">
-                  Nome
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 font-poppins"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-tradeoff-primary font-poppins">
-                  Telefone
-                </label>
-                <input
-                  type="text"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 font-poppins"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-tradeoff-primary font-poppins">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 font-poppins"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-tradeoff-primary font-poppins">
-                  Sua Pergunta
-                </label>
                 <textarea
+                  placeholder="Insira a sua mensagem"
+                  disabled={loading}
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 font-poppins"
+                  className={`w-full border ${
+                    validationErrors.message
+                      ? "border-red-500"
+                      : "border-gray-300"
+                  } p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 font-poppins`}
                   rows={4}
                   required
                 ></textarea>
+                <p className="text-xs text-red-500 pl-2">
+                  {validationErrors.message}
+                </p>
               </div>
               <div className="flex justify-center">
-                <Button
-                  disabled={loading}
-                  variant="tradeoff_secondary"
-                  // type="submit"
-                  // className="bg-yellow-300 text-tradeoff-primary hover:bg-yellow-400 transition-colors duration-300 rounded-lg shadow-lg font-poppins text-nowrap md:px-10 px-4 py-2 self-center font-bold focus:outline-nonetext-center mt-3 disabled:opacity-50"
-                >
+                <Button disabled={loading} variant="tradeoff_secondary">
                   Enviar Pergunta
                 </Button>
               </div>

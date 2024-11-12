@@ -79,7 +79,7 @@ export const BuyerBenefits = () => {
           {/* Video Placeholder */}
           <div className="flex-1 relative min-h-72 md:h-auto w-full bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden shadow-md shadow-tradeoff-primary/30">
             {/* Placeholder for video */}
-            {/* <span className="text-gray-500">[Imagem do ciclo compradores]</span> */}
+            <span className="text-gray-500">[Imagem do ciclo compradores]</span>
             {/* <Image
               src="/images/img1.png"
               alt="Imagem de coproduto"

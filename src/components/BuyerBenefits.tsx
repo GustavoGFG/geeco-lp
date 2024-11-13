@@ -78,15 +78,12 @@ export const BuyerBenefits = () => {
 
           {/* Video Placeholder */}
           <div className="flex-1 relative h-72 md:h-auto w-full bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden shadow-md shadow-tradeoff-primary/30">
-            {/* Placeholder for video */}
-            {/* <span className="text-gray-500">[Imagem do ciclo compradores]</span> */}
             <Image
               src="/images/img_buyers.png"
               alt="Imagem de coproduto"
               width={1000} // Define largura fixa
               height={1000} // Define altura fixa
               className="w-auto h-full shadow-lg shadow-gray object-cover flex-1"
-              // style={{ width: "100px", height: "100px" }} // Dimensões de 100x100px
             />
           </div>
         </div>

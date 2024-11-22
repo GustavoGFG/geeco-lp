@@ -18,7 +18,7 @@ export const CustomCard: React.FC<CardProps> = ({
   href,
 }) => {
   return (
-    <div className="max-w-[300px] flex flex-col h-full items-center justify-between gap-2">
+    <div className="max-w-[300px] flex flex-col items-center justify-between gap-2 min-h-[340px] m-auto">
       {/* Borda contornando o card */}
 
       {/* Container para o número, título e ícone */}

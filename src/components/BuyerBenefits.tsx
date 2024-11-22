@@ -50,7 +50,7 @@ export const BuyerBenefits = () => {
     >
       <div className="max-w-[1200px] mx-auto md:px-10 px-4 w-full flex flex-col gap-12">
         {/* About Us and Video Section */}
-        <div className="flex flex-col md:flex-row-reverse gap-8">
+        <div className="flex flex-col lg:flex-row-reverse gap-8">
           {/* About Us Text */}
           <div className="flex items-center justify-center flex-1 ">
             <div className="flex flex-col items-center justify-center">
@@ -77,13 +77,13 @@ export const BuyerBenefits = () => {
           </div>
 
           {/* Video Placeholder */}
-          <div className="flex-1 relative h-72 md:h-auto w-full bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden shadow-md shadow-tradeoff-primary/30">
+          <div className="flex-1 relative h-72 aspect-auto md:h-auto flex items-center justify-center">
             <Image
               src="/images/img_buyers.png"
               alt="Imagem de coproduto"
-              width={1000} // Define largura fixa
-              height={1000} // Define altura fixa
-              className="w-auto h-full shadow-lg shadow-gray object-cover flex-1"
+              width={2000} // Define largura fixa
+              height={1200} // Define altura fixa
+              className="aspect-auto w-full lg:max-w-full max-w-[500px] h-auto flex-1 object-cover shadow-lg shadow-tradeoff-primary/30 rounded-lg"
             />
           </div>
         </div>
